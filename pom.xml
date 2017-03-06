@@ -22,13 +22,19 @@
     <artifactId>echo</artifactId>
 
     <parent>
-        <artifactId>appengine-doc-samples</artifactId>
-        <groupId>com.google.cloud</groupId>
-        <version>1.0.0</version>
-        <relativePath>../..</relativePath>
+        <groupId>com.google.cloud.samples</groupId>
+        <artifactId>shared-configuration</artifactId>
+        <version>1.0.2</version>
     </parent>
 
     <properties>
+        <project.http.version>1.19.0</project.http.version>
+        <project.oauth.version>1.19.0</project.oauth.version>
+
+        <spanner.test.instance>default-instance</spanner.test.instance>
+        <spanner.sample.database>mysample</spanner.sample.database>
+        <spanner.quickstart.database>quickstart-db</spanner.quickstart.database>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <endpoints.framework.version>2.0.3</endpoints.framework.version>
@@ -42,6 +48,11 @@
 
     <dependencies>
         <!-- Compile/runtime dependencies -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -57,6 +68,25 @@
             <groupId>com.google.endpoints</groupId>
             <artifactId>endpoints-management-control-appengine-all</artifactId>
             <version>${endpoints.management.version}</version>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.7.13</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.jcabi</groupId>
+            <artifactId>jcabi-matchers</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
 
