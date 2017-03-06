@@ -67,6 +67,13 @@ public class Echo {
   }
   // [END echo_method]
 
+  @ApiMethod(name = "hello")
+  public Message hello(Message message) {
+    Message resp = new Message();
+    resp.setMessage("Hello World");
+    return resp;
+  }
+
   /**
    * Echoes the received message back. If n is a non-negative integer, the message is copied that
    * many times in the returned message.
