@@ -67,7 +67,8 @@ public class Echo {
   }
   // [END echo_method]
 
-  @ApiMethod(name = "hello")
+  @ApiMethod(httpMethod = ApiMethod.HttpMethod.GET,
+          name = "hello")
   public Message hello(Message message) {
     Message resp = new Message();
     resp.setMessage("Hello World");
